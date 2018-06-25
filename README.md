@@ -8,7 +8,8 @@
 
 Yii2 extension for converting yii2 flash message to html5 web notifications
 
-
+[![Latest Stable Version](https://poser.pugx.org/whagency/yii2-html5-notifications/v/stable)](https://packagist.org/packages/whagency/yii2-html5-notifications)
+[![License](https://poser.pugx.org/whagency/yii2-html5-notifications/license)](https://packagist.org/packages/whagency/yii2-html5-notifications)
 
 Installation
 ------------

@@ -19,27 +19,13 @@ class Alert extends \yii\bootstrap\Widget
     {
     	parent::init();
 
-    	$this->registrJs();
-
-    	$logo = !empty($this->options['logo'])?intval($this->options['logo']):'';
-        $session = \Yii::$app->getSession();
-        $flashes = $session->getAllFlashes();
-        $appendCss = isset($this->options['class'])?' '.$this->options['class']:'';
-        foreach ($flashes as $type => $data) {
-			$title = (isset($this->alertTypes[$type]))?Yii::t('app', $this->alertTypes[$type]):Yii::t('app', $this->alertTypes['success']);
-			echo '<script>showNotify("'.$title.'", "'.$data.'");</script>';
-        }
-    }
-
-    function registrJs() {
-		$script = <<< JS
-
+	    $script = <<< JS
 			var Notification = window.Notification || window.mozNotification || window.webkitNotification;
-	        if (Notification) {
-	            Notification.requestPermission(function (permission) {
-	                // console.log(permission);
-	            });
-	        }
+		    if (Notification) {
+		        Notification.requestPermission(function (permission) {
+		            // console.log(permission);
+		        });
+		    }
 
 		    function showNotify(notify_title, notify_text) {
 		        if (Notification) {
@@ -63,7 +49,16 @@ class Alert extends \yii\bootstrap\Widget
 		            console.log('html5 notification text: ' + notify_text);
 		        }
 		    }
-		JS;
-		$this->registerJs($script, yii\web\View::POS_END);    	
+JS;
+		$this->getView()->registerJs($script, yii\web\View::POS_END);  
+
+    	$logo = !empty($this->options['logo'])?intval($this->options['logo']):'';
+        $session = \Yii::$app->getSession();
+        $flashes = $session->getAllFlashes();
+        $appendCss = isset($this->options['class'])?' '.$this->options['class']:'';
+        foreach ($flashes as $type => $data) {
+			$title = (isset($this->alertTypes[$type]))?Yii::t('app', $this->alertTypes[$type]):Yii::t('app', $this->alertTypes['success']);
+			echo '<script>showNotify("'.$title.'", "'.$data.'");</script>';
+        }
     }
 }

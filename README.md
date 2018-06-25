@@ -38,13 +38,11 @@ Usage Example
 1. Add widget to your page before `</body>` tag
 
 ~~~php
-		...
-
-		<?= \webheads\notifications\Alert::widget(['options' => [
-			'logo' => '@web/files/logo.png'
-		]]) ?>
-
-	</body>
+ ...
+  <?= \webheads\notifications\Alert::widget(['options' => [
+ 	  'logo' => '@web/files/logo.png'
+  ]]) ?>
+ </body>
 </html>
 ~~~
 

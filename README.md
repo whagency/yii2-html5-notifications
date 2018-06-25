@@ -41,7 +41,7 @@ Usage Example
     ...
 
     <?= \webheads\notifications\Alert::widget(['options' => [
- 	    'logo' => 'https://github.com/whagency/yii2-html5-notifications/blob/master/demo/3.jpg',
+ 	    'logo' => 'https://github.com/whagency/yii2-html5-notifications/blob/master/demo/icon.png',
  	    'hideAfter' => 5000,
     ]]) ?>
 

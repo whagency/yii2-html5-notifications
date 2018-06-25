@@ -1,0 +1,28 @@
+{
+    "name": "whagency/yii2-html5-notifications",
+    "description": "Yii2 html5 web notifications",
+    "keywords": ["yii2", "html5", "web", "notifications", "flash"],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "support": {
+        "source": "https://github.com/whagency/yii2-html5-notifications",
+        "issues": "https://github.com/whagency/yii2-html5-notifications/issues"
+    },
+    "authors": [
+        {
+            "name": "WebHeads",
+            "email": "dev@webheads.agency",
+            "homepage": "https://webheads.agency",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "webheads\\notifications\\": ""
+        }
+    }
+}

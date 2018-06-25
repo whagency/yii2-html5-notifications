@@ -19,6 +19,9 @@ class Alert extends \yii\bootstrap\Widget
     {
     	parent::init();
 
+    	$logo = !empty($this->options['logo'])?strip_tags($this->options['logo']):'';
+    	$hideAfter = !empty($this->options['hideAfter'])?intval($this->options['logo']):4000;
+
 	    $script = <<< JS
 			var Notification = window.Notification || window.mozNotification || window.webkitNotification;
 		    if (Notification) {
@@ -33,7 +36,7 @@ class Alert extends \yii\bootstrap\Widget
 		                notify_title, {
 		                    tag: 'set',
 		                    body: notify_text,
-		                    icon: "/files/images/logo.png"
+		                    icon: "$logo"
 		                }
 		            );
 
@@ -42,7 +45,7 @@ class Alert extends \yii\bootstrap\Widget
 		            instance.onshow = function () {};
 		            instance.onclose = function () {};
 		            
-		            setTimeout(instance.close.bind(instance), 4000);
+		            setTimeout(instance.close.bind(instance), $hideAfter);
 
 		            return false;
 		        } else {
@@ -52,7 +55,6 @@ class Alert extends \yii\bootstrap\Widget
 JS;
 		$this->getView()->registerJs($script, yii\web\View::POS_END);  
 
-    	$logo = !empty($this->options['logo'])?intval($this->options['logo']):'';
         $session = \Yii::$app->getSession();
         $flashes = $session->getAllFlashes();
         $appendCss = isset($this->options['class'])?' '.$this->options['class']:'';

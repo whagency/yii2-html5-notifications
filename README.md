@@ -41,7 +41,8 @@ Usage Example
     ...
 
     <?= \webheads\notifications\Alert::widget(['options' => [
- 	    'logo' => '@web/files/logo.png'
+ 	    'logo' => '@web/files/logo.png',
+ 	    'hideAfter' => 5000,
     ]]) ?>
 
   </body>

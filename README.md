@@ -38,10 +38,12 @@ Usage Example
 1. Add widget to your page before `</body>` tag
 
 ~~~php
-  ...
+    ...
+
     <?= \webheads\notifications\Alert::widget(['options' => [
  	    'logo' => '@web/files/logo.png'
     ]]) ?>
+
   </body>
 </html>
 ~~~
@@ -54,8 +56,8 @@ Yii::$app->session->setFlash('success', 'My notification message');
 
 3. Allow html5 messages in your browser
 
-<img src="https://github.com/whagency/yii2-html5-notifications/tree/master/demo/1.png" alt="Demo 1">
+<img src="https://github.com/whagency/yii2-html5-notifications/blob/master/demo/1.png" alt="Demo 1">
 
 4. Result
 
-<img src="https://github.com/whagency/yii2-html5-notifications/tree/master/demo/2.jpg" alt="Demo 2">
+<img src="https://github.com/whagency/yii2-html5-notifications/blob/master/demo/2.jpg" alt="Demo 2">

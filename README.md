@@ -1,9 +1,3 @@
-<p align="center">
-    <a href="https://webheads.agency/" target="_blank">
-        <img src="https://webheads.agency/files/images/LogoWebHeads.png" width="181" alt="WebHeads - Creative Web Agency">
-    </a>
-</p>
-
 # yii2-html5-notifications
 
 Yii2 extension for converting yii2 flash message to html5 web notifications
@@ -26,7 +20,6 @@ or add to your composer.json file
 
 
 ```json
-...
 "require": {
     "whagency/yii2-html5-notifications": "*"
 },
